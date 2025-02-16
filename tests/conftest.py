@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selenium import webdriver
 from selene import browser
@@ -18,6 +19,7 @@ def browser_config():
 
 
 @pytest.fixture()
+@allure.step('Set AUTH coookie')
 def browser_with_auth(browser_config):
     main_page = MainPage()
     cookie = get_auth_coockie()
